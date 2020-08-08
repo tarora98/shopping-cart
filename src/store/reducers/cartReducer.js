@@ -1,12 +1,12 @@
 const initialState = {
-  cart: []
+    cart: []
 };
 
 const cartReducer = (state = initialState, action) => {
 
     let cart = state.cart;
 
-    switch(action.type) {
+    switch (action.type) {
 
         case 'ADD_TO_CART':
 

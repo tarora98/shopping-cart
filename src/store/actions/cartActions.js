@@ -1,6 +1,5 @@
 import axios from 'axios';
 export const addToCart = (product) => {
-
     return {
         type: 'ADD_TO_CART',
         payload: {
@@ -11,7 +10,6 @@ export const addToCart = (product) => {
 };
 
 export const removeFromCart = (productId) => {
-
     return {
         type: 'REMOVE_FROM_CART',
         payload: {
@@ -21,7 +19,6 @@ export const removeFromCart = (productId) => {
 };
 
 export const updateCartQuantity = (productId, quantity) => {
-
     return {
         type: 'UPDATE_CART_QUANTITY',
         payload: {
@@ -30,4 +27,14 @@ export const updateCartQuantity = (productId, quantity) => {
         }
     }
 };
+
+export const pList = (data) => {
+    console.log('HERE', data);
+    return {
+        type: 'plist',
+        payload: data,
+    };
+};
+
+
 

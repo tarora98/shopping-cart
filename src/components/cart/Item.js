@@ -40,7 +40,7 @@ class Item extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.props.updateCartQuantity(this.props.item.product.id, this.state.quantity);
+        this.props.updateCartQuantity(this.props.item.product.Year, this.state.quantity);
 
         this.setState({
             btnVisible: false
