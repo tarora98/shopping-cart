@@ -9,20 +9,20 @@ export const addToCart = (product) => {
     }
 };
 
-export const removeFromCart = (productId) => {
+export const removeFromCart = (imdbID) => {
     return {
         type: 'REMOVE_FROM_CART',
         payload: {
-            productId: productId
+            imdbID: imdbID
         }
     }
 };
 
-export const updateCartQuantity = (productId, quantity) => {
+export const updateCartQuantity = (imdbID, quantity) => {
     return {
         type: 'UPDATE_CART_QUANTITY',
         payload: {
-            productId,
+            imdbID,
             quantity: quantity
         }
     }
@@ -32,7 +32,7 @@ export const pList = (data) => {
     console.log('HERE', data);
     return {
         type: 'plist',
-        payload: data,
+        payload: data
     };
 };
 

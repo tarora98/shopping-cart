@@ -3,15 +3,15 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class Navbar extends Component {
+    state={
+        counter:0
+    }
 
     render() {
 
         this.props.cartUpdated();
 
         let total = 0;
-
-        this.props.cart.map(item => total += item.product.price * item.quantity);
-
         return (
 
             <nav className="navbar navbar-default">
@@ -25,7 +25,7 @@ class Navbar extends Component {
                             <li><NavLink to="/my-cart">
                                 {
                                     this.props.cart.length > 0 ? (
-                                        <span className="label label-info">{this.props.cart.length} items: (${total.toFixed(2)})</span>
+                                        <span className="label label-info">Added</span>
                                     ) : null
                                 }
                                 <i className="glyphicon glyphicon-shopping-cart"></i> My List</NavLink></li>

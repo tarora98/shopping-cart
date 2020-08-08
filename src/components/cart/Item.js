@@ -8,30 +8,17 @@ class Item extends Component {
         super(props);
 
         this.state = {
-            quantity: this.props.item.quantity,
+            quantity: this.props.item.imdbID,
             btnVisible: false,
             checked: true
         };
     }
     handleChange = (e) => {
 
-        if (e.target.value <= 0) {
-            alert("Quantity must be greater than or equal to 1");
-
-            return;
-        }
-
-        if (e.target.value > this.props.item.product.amount) {
-            alert("You have exceeded the available items of this product!");
-
-            return;
-        }
-
-        if (this.state.quantity != e.target.value) {
+        if (this.state.imdbID != e.target.value) {
             this.setState({
                 quantity: e.target.value,
                 btnVisible: true,
-
             });
         }
 
@@ -40,7 +27,7 @@ class Item extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        this.props.updateCartQuantity(this.props.item.product.Year, this.state.quantity);
+        this.props.updateCartQuantity(this.props.item.product.imdbID, this.state.quantity);
 
         this.setState({
             btnVisible: false
@@ -48,7 +35,7 @@ class Item extends Component {
     }
 
     handleRemove = (e) => {
-        this.props.removeFromCart(this.props.item.product.id);
+        this.props.removeFromCart(this.props.item.product.imdbID);
     }
 
 
@@ -63,20 +50,17 @@ class Item extends Component {
                 <Checkbox
                     checked={this.checked}
                 />
-                <div className="col-xs-2"><img className="img-responsive" src={item.product.image} />
+                <div className="col-xs-2"><img className="img-responsive" src={item.product.Poster} />
                 </div>
                 <div className="col-xs-4">
-                    <h4 className="product-name"><strong>{item.product.title}</strong></h4>
+                    <h4 className="product-name"><strong>{item.product.Title}</strong></h4>
+                    <h4 className="product-name"><strong>{item.product.Year}</strong></h4>
                 </div>
                 <div className="col-xs-6">
                     <div className="col-xs-3 text-right">
                         <h6><strong>{item.product.price} <span className="text-muted">x</span></strong></h6>
                     </div>
                     <form onSubmit={this.handleSubmit}>
-                        <div className="col-xs-4">
-                            <input type="number" className="form-control input-sm" onChange={this.handleChange} value={this.state.quantity} />
-                        </div>
-
                         {
                             this.state.btnVisible ? (
                                 <div className="col-xs-2">
@@ -101,8 +85,8 @@ class Item extends Component {
 const mapDispatchToProps = (dispatch) => {
 
     return {
-        updateCartQuantity: (productId, quantity) => dispatch(updateCartQuantity(productId, quantity)),
-        removeFromCart: (productId) => dispatch(removeFromCart(productId))
+        updateCartQuantity: (imdbID, quantity) => dispatch(updateCartQuantity(imdbID, quantity)),
+        removeFromCart: (imdbID) => dispatch(removeFromCart(imdbID))
     }
 };
 

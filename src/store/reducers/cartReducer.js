@@ -18,9 +18,9 @@ const cartReducer = (state = initialState, action) => {
             };
         case 'UPDATE_CART_QUANTITY':
 
-            let item = cart.find(item => item.product.id == action.payload.productId);
+            let item = cart.find(item => item.product.imdbID== action.payload.imdbID);
 
-            let newCart = cart.filter(item => item.product.id != action.payload.productId);
+            let newCart = cart.filter(item => item.product.imdbID!= action.payload.imdbID);
 
             item.quantity = action.payload.quantity;
 
@@ -34,7 +34,7 @@ const cartReducer = (state = initialState, action) => {
         case 'REMOVE_FROM_CART':
             return {
                 ...state,
-                cart: cart.filter(item => item.product.id != action.payload.productId)
+                cart: cart.filter(item => item.product.imdbID != action.payload.imdbID)
             };
         default:
             return state;

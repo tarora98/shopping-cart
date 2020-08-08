@@ -15,7 +15,7 @@ class Cart extends Component {
                     {
                         this.props.cart.map(item => {
                             return (
-                                <div key={item.product.Year}>
+                                <div key={item.product.imdbID}>
                                     <Item item={item} />
                                     <hr />
                                 </div>
@@ -54,9 +54,7 @@ class Cart extends Component {
                                     </div>
                                 </div>
                             </div>
-
                             {cart}
-
                         </div>
                     </div>
                 </div>

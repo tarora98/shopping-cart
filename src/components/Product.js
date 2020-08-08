@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Checkbox from '@material-ui/core/Checkbox';
+
 class Product extends Component {
     state = {
-        inCart: this.props.inCart,
-        checked: true
+        inCart: this.props.inCart
     };
 
     addToCart = (e) => {
@@ -13,6 +12,8 @@ class Product extends Component {
             inCart: true
         })
     }
+
+
 
     render() {
         const { product } = this.props;
@@ -46,6 +47,8 @@ class Product extends Component {
                     </div>
                 </figure>
             </div>
+
+
         )
     }
 }
