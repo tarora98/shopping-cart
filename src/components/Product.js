@@ -13,8 +13,6 @@ class Product extends Component {
         })
     }
 
-
-
     render() {
         const { product } = this.props;
         return (
@@ -38,7 +36,7 @@ class Product extends Component {
                         {"  "}
                         {
                             this.state.inCart ? (
-                                <a href="#" className="btn btn-sm btn-primary float-right" checked={!this.checked} >Watch list </a>
+                                <a href="#" className="btn btn-sm btn-primary float-right" >Watch list </a>
                             ) : (
                                     <a href="#" className="btn btn-sm btn-primary float-right">Watch list </a>
                                 )

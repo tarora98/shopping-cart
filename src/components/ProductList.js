@@ -6,7 +6,6 @@ import { pList, addToCart } from '../store/actions/cartActions';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
-import Year from './Year';
 import ReactDOM from "react-dom";
 class ProductList extends Component {
 
@@ -33,7 +32,7 @@ class ProductList extends Component {
         this.setState({ message: c || Nothing })
     }
     render() {
-        console.log(Red()+"JDJEO");
+        console.log(Red() + "JDJEO");
         return (
 
             <div className="container">
@@ -84,7 +83,7 @@ const Status = ({ children }) => <div>{children}</div>
 const Nothing = () => <h2>Select Year</h2>
 const Red = () => <h2 style={{
     fontWeight: 'bold',
-}}>value</h2>
+}}>2000</h2>
 
 const data = {
     2000: Red
